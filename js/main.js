@@ -38,6 +38,7 @@
         ]
     });
 
+    const statsContainer = document.querySelector(".stats-container");
     const avatarContainer = document.querySelector(".avatar-container");
     const searchBtn = document.querySelector(".search-button");
     const uidInput = document.querySelector(".uid-input");
@@ -67,6 +68,7 @@
                                 message: "错误：" + result["message"]
                             });
                             avatarContainer.classList.add("invisible");
+                            statsContainer.classList.add("invisible");
                         } else {
                             avatarContainer.innerHTML = "";
                             let html = "";
@@ -74,7 +76,23 @@
                                 html += `<avatar-card image="${result["data"]["avatars"][i]["image"]}" name="${result["data"]["avatars"][i]["name"]}" element="${result["data"]["avatars"][i]["element"]}" fetter="${result["data"]["avatars"][i]["fetter"]}" level="${result["data"]["avatars"][i]["level"]}" rarity="${result["data"]["avatars"][i]["rarity"]}" class="content"></avatar-card>`;
                             }
                             avatarContainer.innerHTML = html;
+
+                            document.querySelector(".data-1").innerText = result["data"]["stats"]["active_day_number"];
+                            document.querySelector(".data-2").innerText = result["data"]["stats"]["achievement_number"];
+                            document.querySelector(".data-3").innerText = result["data"]["stats"]["anemoculus_number"];
+                            document.querySelector(".data-4").innerText = result["data"]["stats"]["geoculus_number"];
+                            document.querySelector(".data-5").innerText = result["data"]["stats"]["avatar_number"];
+                            document.querySelector(".data-6").innerText = result["data"]["stats"]["way_point_number"];
+                            document.querySelector(".data-7").innerText = result["data"]["stats"]["domain_number"];
+                            document.querySelector(".data-8").innerText = result["data"]["stats"]["spiral_abyss"];
+                            document.querySelector(".data-9").innerText = result["data"]["stats"]["luxurious_chest_number"];
+                            document.querySelector(".data-10").innerText = result["data"]["stats"]["precious_chest_number"];
+                            document.querySelector(".data-11").innerText = result["data"]["stats"]["exquisite_chest_number"];
+                            document.querySelector(".data-12").innerText = result["data"]["stats"]["common_chest_number"];
+
+
                             avatarContainer.classList.remove("invisible");
+                            statsContainer.classList.remove("invisible");
                             notyf.open({
                                 type: 'success',
                                 message: "玩家信息获取成功"
@@ -89,6 +107,7 @@
                             message: "信息获取失败，请重试"
                         });
                         avatarContainer.classList.add("invisible");
+                        statsContainer.classList.add("invisible");
                         searchBtn.classList.remove("disabled");
                     })
             }
