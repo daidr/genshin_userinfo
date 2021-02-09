@@ -93,9 +93,6 @@ figure img {
     flex-shrink: 1;
     text-align: inherit;
 }
-::selection {
-    background: #eee3c5;
-}
     `;
 
             shadow.appendChild(style);
