@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>原神玩家信息查询</title>
+    <link rel="stylesheet" href="./css/notyf.css">
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+
+<body>
+    <header class="navbar">
+        <span class="navbar-text">原神玩家信息查询</span>
+    </header>
+    <div class="diviser"></div>
+    <main>
+        <div class="container">
+            <select class="server-select">
+                <option value="0">官服</option>
+                <option value="1">B服</option>
+            </select>
+            <input type="number" class="uid-input" placeholder="玩家uid" />
+            <div class="button search-button">查询</div>
+        </div>
+        <div class="diviser"></div>
+        <div class="container avatar-container invisible">
+        </div>
+    </main>
+    <script src="./js/avatar_card.js"></script>
+    <script src="./js/notyf.js"></script>
+    <script src="./js/main.js"></script>
+</body>
+
+</html>
