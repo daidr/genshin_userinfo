@@ -102,7 +102,7 @@ figure:after{
   left:0;
   right:0;
   bottom:0;
-  box-shadow:0 0 11px 12px rgb(218 206 172) inset;
+  box-shadow:0 -9px 12px 10px #daceac inset;
 }
     `;
 
