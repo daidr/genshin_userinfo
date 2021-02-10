@@ -40,6 +40,7 @@
 
     const statsContainer = document.querySelector(".stats-container");
     const avatarContainer = document.querySelector(".avatar-container");
+    const worldContainer = document.querySelector(".world-container");
     const searchBtn = document.querySelector(".search-button");
     const uidInput = document.querySelector(".uid-input");
     const serverSelect = document.querySelector(".server-select");
@@ -69,6 +70,7 @@
                             });
                             avatarContainer.classList.add("invisible");
                             statsContainer.classList.add("invisible");
+                            worldContainer.classList.add("invisible");
                         } else {
                             avatarContainer.innerHTML = "";
                             let html = "";
@@ -90,9 +92,17 @@
                             document.querySelector(".data-11").innerText = result["data"]["stats"]["exquisite_chest_number"];
                             document.querySelector(".data-12").innerText = result["data"]["stats"]["common_chest_number"];
 
+                            worldContainer.innerHTML = "";
+                            html = "";
+                            for (let i = 0; i < result["data"]["world_explorations"].length; i++) {
+                                html += `<world-card icon="${result["data"]["world_explorations"][i]["icon"]}" name="${result["data"]["world_explorations"][i]["name"]}" type="${result["data"]["world_explorations"][i]["type"]}" exploration_percentage="${result["data"]["world_explorations"][i]["exploration_percentage"]}" level="${result["data"]["world_explorations"][i]["level"]}" class="content"></world-card>`;
+                            }
+                            worldContainer.innerHTML = html;
+
 
                             avatarContainer.classList.remove("invisible");
                             statsContainer.classList.remove("invisible");
+                            worldContainer.classList.remove("invisible");
                             notyf.open({
                                 type: 'success',
                                 message: "玩家信息获取成功"
@@ -108,6 +118,7 @@
                         });
                         avatarContainer.classList.add("invisible");
                         statsContainer.classList.add("invisible");
+                        worldContainer.classList.add("invisible");
                         searchBtn.classList.remove("disabled");
                     })
             }

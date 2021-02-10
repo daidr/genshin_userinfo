@@ -1,15 +1,16 @@
 (function () {
-    function genStar(number) {
-        return "★".repeat(number)
+    const typeName = {
+        "Reputation": "声望等级：",
+        "Offering": "供奉等级：",
     }
-    class AvatarCard extends HTMLElement {
+    class WorldCard extends HTMLElement {
         constructor() {
             super();
 
             const shadow = this.attachShadow({ mode: 'open' });
 
-            const avatar = document.createElement('article');
-            avatar.setAttribute('class', 'media');
+            const world = document.createElement('article');
+            world.setAttribute('class', 'media');
 
             const mediaLeft = document.createElement('div');
             mediaLeft.setAttribute('class', 'media-left');
@@ -20,7 +21,7 @@
             const figure = document.createElement('figure');
 
             const img = document.createElement('img');
-            img.src = this.getAttribute('image');
+            img.src = this.getAttribute('icon');
 
             const content = document.createElement('div');
             content.setAttribute('class', 'content');
@@ -34,28 +35,16 @@
             temp = document.createElement('br');
             p.appendChild(temp);
 
-            temp = document.createElement('small');
-            temp.innerText = this.getAttribute('element')+" ";
-            p.appendChild(temp);
-
-            temp = document.createElement('small');
-            temp.innerText = genStar(this.getAttribute('rarity'));
+            temp = document.createElement('span');
+            temp.innerText = "探索度：" + (this.getAttribute('exploration_percentage') / 10) + "%";
             p.appendChild(temp);
 
             temp = document.createElement('br');
             p.appendChild(temp);
 
             temp = document.createElement('span');
-            temp.innerText = "等级：" + this.getAttribute('level');
+            temp.innerText = typeName[this.getAttribute('type')] + this.getAttribute('level');
             p.appendChild(temp);
-
-            temp = document.createElement('br');
-            p.appendChild(temp);
-
-            temp = document.createElement('span');
-            temp.innerText = "好感度：" + this.getAttribute('fetter');
-            p.appendChild(temp);
-
 
             content.appendChild(p);
 
@@ -81,13 +70,11 @@ figure {
     height: 85px;
     width: 85px;
     margin: 0;
-    position:relative;
 }
 figure img {
     display: block;
     height: auto;
     width: 100%;
-    filter: saturate(0.6);
 }
 .media-content {
     flex-basis: auto;
@@ -95,28 +82,19 @@ figure img {
     flex-shrink: 1;
     text-align: inherit;
 }
-figure:after{
-  position:absolute;
-  content:'';
-  top:0;
-  left:0;
-  right:0;
-  bottom:0;
-  box-shadow:0 0 11px 12px rgb(218 206 172) inset;
-}
     `;
 
             shadow.appendChild(style);
-            shadow.appendChild(avatar);
+            shadow.appendChild(world);
 
             mediaLeft.appendChild(figure);
             figure.appendChild(img);
 
             mediaContent.appendChild(content);
 
-            avatar.appendChild(mediaLeft);
-            avatar.appendChild(mediaContent);
+            world.appendChild(mediaLeft);
+            world.appendChild(mediaContent);
         }
     }
-    customElements.define('avatar-card', AvatarCard);
+    customElements.define('world-card', WorldCard);
 })()
