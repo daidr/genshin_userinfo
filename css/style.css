@@ -176,6 +176,7 @@ avatar-card {
     text-align: center;
     font-weight: 100;
     margin: 0;
+	font-size: 19px;
 }
 
 .stats-data {
