@@ -129,6 +129,7 @@ select:focus {
 option {
     font-weight: bold;
     background: #fffcf3;
+	color: #daceac;
 }
 
 ::selection {
