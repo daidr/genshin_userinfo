@@ -88,12 +88,16 @@ figure img {
     height: auto;
     width: 100%;
     filter: saturate(0.6);
+    pointer-events: none;
+    user-select: none;
 }
 .media-content {
     flex-basis: auto;
     flex-grow: 1;
     flex-shrink: 1;
     text-align: inherit;
+    -webkit-filter: drop-shadow(0 0 3px rgb(184 179 164));
+    filter: drop-shadow(0 0 3px rgb(184 179 164));
 }
 figure:after{
   position:absolute;
@@ -103,6 +107,10 @@ figure:after{
   right:0;
   bottom:0;
   box-shadow:0 -9px 12px 10px #daceac inset;
+}
+::selection {
+    background: #eee3c5;
+    color: #afa68c;
 }
     `;
 

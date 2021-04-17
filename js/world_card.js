@@ -75,12 +75,22 @@ figure img {
     display: block;
     height: auto;
     width: 100%;
+    pointer-events: none;
+    user-select: none;
+    -webkit-filter: drop-shadow(0 0 3px rgb(184 179 164));
+    filter: drop-shadow(0 0 3px rgb(184 179 164));
 }
 .media-content {
     flex-basis: auto;
     flex-grow: 1;
     flex-shrink: 1;
     text-align: inherit;
+    -webkit-filter: drop-shadow(0 0 3px rgb(184 179 164));
+    filter: drop-shadow(0 0 3px rgb(184 179 164));
+}
+::selection {
+    background: #eee3c5;
+    color: #afa68c;
 }
     `;
 

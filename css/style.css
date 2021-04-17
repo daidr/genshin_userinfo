@@ -5,10 +5,16 @@ html {
     background: #fffcf3;
 }
 
+body {
+    width: 80%;
+    margin: 0 auto;
+}
+
 * {
     box-sizing: border-box;
     vertical-align: middle;
     color: #fffcf3;
+    transition: width .2s linear;
 }
 
 .navbar {
@@ -24,7 +30,8 @@ html {
 
 .navbar-text {
     color: #fffcf3;
-    box-shadow: 0 0 7px #daceac inset;
+    -webkit-filter: drop-shadow(0 0 3px rgb(184 179 164));
+    filter: drop-shadow(0 0 3px rgb(184 179 164));
     font-size: 25px;
     font-weight: bold;
     user-select: none;
@@ -129,11 +136,12 @@ select:focus {
 option {
     font-weight: bold;
     background: #fffcf3;
-	color: #daceac;
+    color: #daceac;
 }
 
 ::selection {
     background: #eee3c5;
+    color: #afa68c;
 }
 
 .uid-input {
@@ -174,13 +182,17 @@ avatar-card {
 }
 
 .stats-title {
+    -webkit-filter: drop-shadow(0 0 3px rgb(184 179 164));
+    filter: drop-shadow(0 0 3px rgb(184 179 164));
     text-align: center;
     font-weight: 100;
     margin: 0;
-	font-size: 19px;
+    font-size: 19px;
 }
 
 .stats-data {
+    -webkit-filter: drop-shadow(0 0 3px rgb(184 179 164));
+    filter: drop-shadow(0 0 3px rgb(184 179 164));
     text-align: center;
     font-size: 30px;
     margin: 0;
@@ -196,6 +208,12 @@ avatar-card {
 
 world-card {
     width: 240px;
+}
+
+@media screen and (max-width: 1260px) {
+    body {
+        width: 90%;
+    }
 }
 
 @media screen and (max-width: 1160px) {
@@ -227,6 +245,10 @@ world-card {
 }
 
 @media (max-width: 560px) {
+    body {
+        width: 100%;
+    }
+
     .uid-input {
         width: calc(100%);
         display: inline-block;
