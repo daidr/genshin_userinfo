@@ -75,7 +75,7 @@
                             avatarContainer.innerHTML = "";
                             let html = "";
                             for (let i = 0; i < result["data"]["avatars"].length; i++) {
-                                html += `<avatar-card image="${result["data"]["avatars"][i]["image"]}" name="${result["data"]["avatars"][i]["name"]}" element="${result["data"]["avatars"][i]["element"]}" fetter="${result["data"]["avatars"][i]["fetter"]}" level="${result["data"]["avatars"][i]["level"]}" rarity="${result["data"]["avatars"][i]["rarity"]}" class="content"></avatar-card>`;
+                                html += `<avatar-card image="${result["data"]["avatars"][i]["image"]}" name="${result["data"]["avatars"][i]["name"]}" actived_constellation_num="${result["data"]["avatars"][i]["actived_constellation_num"]}" element="${result["data"]["avatars"][i]["element"]}" fetter="${result["data"]["avatars"][i]["fetter"]}" level="${result["data"]["avatars"][i]["level"]}" rarity="${result["data"]["avatars"][i]["rarity"]}" class="content"></avatar-card>`;
                             }
                             avatarContainer.innerHTML = html;
 
