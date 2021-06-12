@@ -28,7 +28,7 @@
             const p = document.createElement('p');
 
             let temp = document.createElement('strong');
-            temp.innerText = this.getAttribute('name');
+            temp.innerText = `${this.getAttribute('name')}(${this.getAttribute('actived_constellation_num')})`;
             p.appendChild(temp);
 
             temp = document.createElement('br');
