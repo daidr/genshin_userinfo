@@ -131,7 +131,7 @@
                                             </div>
                                             <div class="homestats-item">
                                                 <p class="homestats-data">${result["data"]["homes"][i]["visit_num"]}</p>
-                                                <p class="homestats-title">访客数</p>
+                                                <p class="homestats-title">历史访客数</p>
                                             </div>
                                         </div>
                                     </div>`
