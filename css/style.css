@@ -14,7 +14,7 @@ body {
     box-sizing: border-box;
     vertical-align: middle;
     color: #fffcf3;
-    transition: width .2s linear;
+    transition: width 0.2s linear;
 }
 
 .navbar {
@@ -210,6 +210,91 @@ world-card {
     width: 240px;
 }
 
+.homes-container {
+    background: transparent;
+    box-shadow: none;
+    padding: 0;
+}
+
+.home-container {
+    box-shadow: 0 0 7px #daceac;
+    border-radius: 10px;
+    margin: 0 auto;
+    margin-bottom: 10px;
+    width: 680px;
+    height: 248px;
+    background-size: cover;
+    background-position: center;
+}
+
+.homecard-row-1 {
+    width: 100%;
+    height: 64px;
+    padding: 12px 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.comfort-level {
+    width: auto;
+    float: left;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+}
+
+.comfort-level-icon {
+    width: 39px;
+    height: 39px;
+    background-size: cover;
+    display: inline-block;
+    filter: drop-shadow(0 0 3px rgba(0, 0, 0, 0.15));
+}
+
+.comfort-level-name {
+    font-size: 22px;
+    margin-bottom: 4px;
+    margin-left: 7px;
+    flex-basis: auto;
+    flex-grow: 1;
+    flex-shrink: 1;
+    filter: drop-shadow(0 0 3px rgba(0, 0, 0, 0.15));
+}
+
+.home-name {
+    font-size: 15px;
+    float: right;
+    opacity: 0.9;
+    font-weight: 200;
+}
+
+.homecard-row-2 {
+    width: 100%;
+    height: 115px;
+    padding: 0 15px;
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background: rgba(0, 0, 0, 0.2);
+}
+
+.homestats-data {
+    font-size: 32px;
+    margin: 10px;
+    font-weight: 800;
+    text-align: center;
+    opacity: 0.9;
+}
+
+.homestats-title {
+    font-size: 16px;
+    opacity: 0.7;
+    text-align: center;
+    word-break: keep-all;
+}
+
 @media screen and (max-width: 1260px) {
     body {
         width: 90%;
@@ -231,6 +316,10 @@ world-card {
         flex-flow: column;
         align-items: center;
     }
+
+    .home-container {
+        width: 100%;
+    }
 }
 
 @media screen and (max-width: 625px) {
@@ -241,6 +330,9 @@ world-card {
     avatar-card {
         width: 230px;
         padding: 0.5rem 1rem;
+    }
+    .home-container {
+        height: 217px;
     }
 }
 
