@@ -163,6 +163,7 @@
                         avatarContainer.classList.add("invisible");
                         statsContainer.classList.add("invisible");
                         worldContainer.classList.add("invisible");
+                        homesContainer.classList.add("invisible");
                         searchBtn.classList.remove("disabled");
                     })
             }
