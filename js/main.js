@@ -72,6 +72,7 @@
                             avatarContainer.classList.add("invisible");
                             statsContainer.classList.add("invisible");
                             worldContainer.classList.add("invisible");
+                            homesContainer.classList.add("invisible");
                         } else {
                             // 获得角色展示板块
                             avatarContainer.innerHTML = "";
