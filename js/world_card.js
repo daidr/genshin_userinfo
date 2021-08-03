@@ -39,12 +39,30 @@
             temp.innerText = "探索度：" + (this.getAttribute('exploration_percentage') / 10) + "%";
             p.appendChild(temp);
 
-            temp = document.createElement('br');
-            p.appendChild(temp);
+            if (this.getAttribute('type') == "Reputation") {
+                temp = document.createElement('br');
+                p.appendChild(temp);
 
-            temp = document.createElement('span');
-            temp.innerText = typeName[this.getAttribute('type')] + this.getAttribute('level');
-            p.appendChild(temp);
+                temp = document.createElement('span');
+                temp.innerText = "声望等级：" + this.getAttribute('level');
+                p.appendChild(temp);
+            }
+
+            if (this.getAttribute('offerings') != "[]") {
+                console.log(this.getAttribute('offerings'))
+                let offerings = JSON.parse(this.getAttribute('offerings'));
+                for (let i = 0; i < offerings.length; i++) {
+                    const offering = offerings[i];
+
+                    temp = document.createElement('br');
+                    p.appendChild(temp);
+
+                    temp = document.createElement('span');
+                    temp.innerText = `${offering["name"]}等级：${offering["level"]}`;
+                    p.appendChild(temp);
+                }
+
+            }
 
             content.appendChild(p);
 
