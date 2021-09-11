@@ -39,7 +39,11 @@
             p.appendChild(temp);
 
             temp = document.createElement('small');
-            temp.innerText = genStar(this.getAttribute('rarity'));
+            if(this.getAttribute('rarity') == "105") {
+                temp.innerText = "(特殊5星)";
+            } else {
+                temp.innerText = genStar(this.getAttribute('rarity'));
+            }
             p.appendChild(temp);
 
             temp = document.createElement('br');
