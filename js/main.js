@@ -96,6 +96,7 @@
                             document.querySelector(".data-11").innerText = result["data"]["stats"]["exquisite_chest_number"];
                             document.querySelector(".data-12").innerText = result["data"]["stats"]["common_chest_number"];
                             document.querySelector(".data-13").innerText = result["data"]["stats"]["electroculus_number"];
+                            document.querySelector(".data-14").innerText = result["data"]["stats"]["magic_chest_number"];
 
                             // 大世界数据展示板块
                             worldContainer.innerHTML = "";
