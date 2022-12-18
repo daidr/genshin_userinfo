@@ -97,12 +97,13 @@
                             document.querySelector(".data-12").innerText = result["data"]["stats"]["common_chest_number"];
                             document.querySelector(".data-13").innerText = result["data"]["stats"]["electroculus_number"];
                             document.querySelector(".data-14").innerText = result["data"]["stats"]["magic_chest_number"];
+                            document.querySelector(".data-15").innerText = result["data"]["stats"]["dendroculus_number"];
 
                             // 大世界数据展示板块
                             worldContainer.innerHTML = "";
                             html = "";
                             for (let i = 0; i < result["data"]["world_explorations"].length; i++) {
-                                html += `<world-card icon="${result["data"]["world_explorations"][i]["icon"]}" name="${result["data"]["world_explorations"][i]["name"]}" type="${result["data"]["world_explorations"][i]["type"]}" exploration_percentage="${result["data"]["world_explorations"][i]["exploration_percentage"]}" level="${result["data"]["world_explorations"][i]["level"]}" offerings="${JSON.stringify(result["data"]["world_explorations"][i]["offerings"]).replace(/\"/g,"&quot;")}" class="content"></world-card>`;
+                                html += `<world-card icon="${result["data"]["world_explorations"][i]["icon"]}" name="${result["data"]["world_explorations"][i]["name"]}" type="${result["data"]["world_explorations"][i]["type"]}" exploration_percentage="${result["data"]["world_explorations"][i]["exploration_percentage"]}" level="${result["data"]["world_explorations"][i]["level"]}" offerings="${JSON.stringify(result["data"]["world_explorations"][i]["offerings"]).replace(/\"/g, "&quot;")}" class="content"></world-card>`;
                             }
                             worldContainer.innerHTML = html;
 
